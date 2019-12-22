@@ -18,11 +18,11 @@ class Preprocess:
     def word_tokenizer(self, sentence):
         return word_tokenize(sentence) 
     
-    def remove_stop_wrods(self, tokenized_sentences):
+    def remove_stop_words(self, tokenized_sentences):
         stop_words = set(stopwords.words('english'))
         return [t for t in tokenized_sentences if not t in stop_words] 
     
-    def clean_text_form(self, doc):
+    def normalize(self, doc):
         doc = doc.lower()
         
         doc = re.sub(r"i'm", "i am", doc)
